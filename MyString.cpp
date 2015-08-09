@@ -14,6 +14,8 @@ int main()
     //MyString s1();
     MyString s2("Hello world");
     MyString s3(s2);
+    s3=s3;
     cout<<"s2: "<<s2<<endl;
     cout<<"s3: "<<s3<<endl;
+    //cout<<"s4: "<<s4<<endl;
 }

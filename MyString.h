@@ -8,7 +8,6 @@
 
 #ifndef ____MyString__
 #define ____MyString__
-#include<stdio.h>
 #include<string.h>
 #include<iostream>
 using namespace std;
@@ -53,6 +52,19 @@ MyString::~MyString()
     delete[] m_data;
 }
 
+inline
+MyString& MyString::operator = (const MyString& str)
+{
+    if(this==&str)
+    {
+        cout<<"self assignment"<<endl;
+        return *this;
+    }
+    delete[] m_data;
+    m_data=new char[strlen(str.m_data)+1];
+    strcpy(this->m_data, str.m_data);
+    return *this;
+}
 
 ostream& operator << (ostream& os, const MyString& str)
 {
